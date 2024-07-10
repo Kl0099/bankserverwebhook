@@ -4,10 +4,16 @@ import { PrismaClient } from "@prisma/client";
 const app = express();
 import cors from "cors";
 const db = new PrismaClient();
+//productiourl : https://bankserverwebhook.onrender.com
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://paytmwallate-user-app.vercel.app/",
+  })
+);
 app.get("/", (req, res) => {
   res.send("hellow my freind");
 });
