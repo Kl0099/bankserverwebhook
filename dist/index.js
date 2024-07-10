@@ -9,8 +9,12 @@ const client_1 = require("@prisma/client");
 const app = (0, express_1.default)();
 const cors_1 = __importDefault(require("cors"));
 const db = new client_1.PrismaClient();
-app.use(express_1.default.json());
+app.use(express_1.default.json({ limit: "10mb" }));
+app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, cors_1.default)());
+app.get("/", (req, res) => {
+    res.send("hellow my freind");
+});
 app.get("/hdfcWebhook", (req, res) => {
     res.send("hii");
 });

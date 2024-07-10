@@ -5,7 +5,8 @@ const app = express();
 import cors from "cors";
 const db = new PrismaClient();
 
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.get("/", (req, res) => {
   res.send("hellow my freind");
