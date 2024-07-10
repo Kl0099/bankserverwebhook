@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "rootDir": "./src", // Adjust this to include all necessary directories
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "include": [
+    "src",
+    "prisma" // Add this to include the prisma directory
+  ],
+  "exclude": ["node_modules", "dist"]
+}
