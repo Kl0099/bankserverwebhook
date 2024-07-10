@@ -7,6 +7,9 @@ const db = new PrismaClient();
 
 app.use(express.json());
 app.use(cors());
+app.get("/", (req, res) => {
+  res.send("hellow my freind");
+});
 app.get("/hdfcWebhook", (req, res) => {
   res.send("hii");
 });
